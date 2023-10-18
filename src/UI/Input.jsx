@@ -5,23 +5,22 @@ import PropTypes from "prop-types";
 
 import colors from "../constans/colors";
 
-const styles = css`
+const styles = (value) => css`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  /* background-color: yellow; */
 
   input {
     width: 70%;
     min-width: 180px;
     max-width: 360px;
     font-size: 1.2rem;
-    padding: 7px 14px;
+    padding: 9px 18px;
     border-radius: 30px;
-    background-color: #d8d8d8;
-    box-shadow: #00000053 0 0 15px;
+    background-color: #dddddd;
+    box-shadow: ${value ? "inset #00000099 0 0 12px" : "#00000053 0 0 15px"};
 
     &::placeholder {
       color: #aaaaaa;
@@ -29,6 +28,11 @@ const styles = css`
 
     &:focus::placeholder {
       visibility: hidden;
+    }
+
+    &:focus {
+      box-shadow: inset #00000099 0 0 12px;
+      outline: #f3ac4f solid 2px;
     }
   }
 
@@ -50,7 +54,7 @@ export default function Input({
 }) {
 
   return (
-    <div css={styles}>
+    <div css={styles(value)}>
       <label htmlFor={id}>{label}</label>
       <input 
         value={value}

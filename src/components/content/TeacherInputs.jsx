@@ -60,6 +60,7 @@ export default function TeacherInputs() {
   const handleCancelForm = (evt) => {
     evt.preventDefault();
     setForm(initForm);
+    setEditedTeacher(null);
     console.log("Form canceled");
   }
 
