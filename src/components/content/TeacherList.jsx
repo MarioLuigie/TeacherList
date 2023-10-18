@@ -2,7 +2,6 @@
 /* eslint-disable react/no-unknown-property */
 // /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { useEffect } from "react";
 
 import TeacherItem from "./TeacherItem";
 import * as actions from "../../actions/teacherActions";
@@ -29,10 +28,6 @@ export default function TeacherList() {
     teacherListDispatch, 
     setEditedTeacher 
   } = useTeacherContext();
-
-  useEffect(() => {
-    actions.readTeachers(teacherListDispatch);
-  }, []);
 
   const handleDeleteSelectedTeacher = (id) => async () => {
     await actions.deleteSelectedTeacher(id, teacherListDispatch);

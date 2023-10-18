@@ -1,8 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unknown-property */
 // /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 
+import * as actions from "../../actions/teacherActions";
+import { useTeacherContext } from '../../context/teacherContext';
 import { container } from "../../constans/dimensions";
 import colors from "../../constans/colors";
 import Header from "./Header";
@@ -20,6 +24,13 @@ const styles = css`
 `
 
 export default function Container() {
+  const {  
+    teacherListDispatch, 
+  } = useTeacherContext();
+
+  useEffect(() => {
+    actions.readTeachers(teacherListDispatch);
+  }, []);
 
   return (
     <div css={styles}>
