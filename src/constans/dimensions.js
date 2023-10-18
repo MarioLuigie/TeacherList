@@ -1,13 +1,13 @@
 export const container = {
-  width: 75,
+  width: 85,
   maxWidth: 960,
-  minWidth: 360,
+  minWidth: 400,
   minHeight: 100
 }
 
 export const header = {
   width: 100,
-  height: 200
+  height: 240
 }
 
 export const main = {

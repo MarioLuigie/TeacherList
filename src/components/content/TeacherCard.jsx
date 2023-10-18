@@ -2,21 +2,18 @@
 // /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
-import { main } from "../../constans/dimensions";
 import { header, footer } from "../../constans/dimensions";
-import TeacherInputs from "../content/TeacherInputs";
-import TeacherList from "../content/TeacherList";
 
 const styles = css`
-  width: ${main.width}%;
+  width: 100%;
   min-height: calc(100vh - ${header.height + footer.height}px);
 `
-export default function Main() {
+
+export default function TeacherCard() {
 
   return (
     <div css={styles}>
-      <TeacherInputs />
-      <TeacherList />
+      test
     </div>
   )
 }

@@ -2,17 +2,23 @@
 // /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
 
 import colors from "../../constans/colors";
 import { header } from "../../constans/dimensions";
+import { useTeacherContext } from '../../context/teacherContext';
+import * as actions from "../../actions/teacherActions";
 
 const styles = css`
+  position: relative;
   width: ${header.width}%;
   height: ${header.height}px;
-  background-color: ${colors.panelColor};
+  background-color: #242424;
   border-bottom: ${colors.sepLineColor} 1px solid;
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -39,14 +45,39 @@ const styles = css`
     }
 
   }
+
+  .settingsPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 20px;
+
+  }
+
+  .settingsIcon {
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: white;
+  }
 `
 
 export default function Header({
   title
 }) {
+  const { teacherListDispatch } = useTeacherContext();
+
+  const handleDeleteAllTeachers = async () => {
+    await actions.deleteAllTeachers(teacherListDispatch);
+  }
 
   return (
     <div css={styles}>
+      <div className='settingsPanel'>
+        <FontAwesomeIcon icon={faGear} className='settingsIcon' onClick={handleDeleteAllTeachers}/>
+      </div>
       <h1 className='title'>{title} <span>&reg;</span></h1>
     </div>
   )

@@ -1,12 +1,14 @@
 /* eslint-disable react/no-unknown-property */
 // /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Routes, Route } from 'react-router-dom';
 
 import { container } from "../../constans/dimensions";
 import colors from "../../constans/colors";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
+import TeacherCard from "../content/TeacherCard";
 
 const styles = css`
   width: ${container.width}%;
@@ -22,7 +24,10 @@ export default function Container() {
   return (
     <div css={styles}>
       <Header title="Teacher List" />
-      <Main />
+      <Routes>
+        <Route exact path={"/"} element={<Main />} />
+        <Route path={"/user/:id"} element={<TeacherCard />} />
+      </Routes>
       <Footer sign="ARWcode 2023" />
     </div>
   )

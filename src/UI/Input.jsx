@@ -20,9 +20,11 @@ const styles = css`
     font-size: 1.2rem;
     padding: 7px 14px;
     border-radius: 30px;
+    background-color: #d8d8d8;
+    box-shadow: #00000053 0 0 15px;
 
     &::placeholder {
-      color: #bebebe;
+      color: #aaaaaa;
     }
 
     &:focus::placeholder {
@@ -38,23 +40,36 @@ const styles = css`
 `
 
 export default function Input({
+  value,
   id,
+  name,
   type,
   label,
-  placeholder
+  placeholder,
+  onHandle
 }) {
 
   return (
     <div css={styles}>
       <label htmlFor={id}>{label}</label>
-      <input type={type} id={id} placeholder={placeholder}/>
+      <input 
+        value={value}
+        id={id} 
+        name={name}
+        type={type} 
+        placeholder={placeholder}
+        onChange={onHandle}
+      />
     </div>
   )
 }
 
 Input.propTypes = {
-  label: PropTypes.string.isRequired,
+  value: PropTypes.string,
   id: PropTypes.string.isRequired,
+  name: PropTypes.string,
   type: PropTypes.string,
-  placeholder: PropTypes.string
+  label: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  onHandle: PropTypes.func
 }

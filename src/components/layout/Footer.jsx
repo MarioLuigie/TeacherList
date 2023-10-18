@@ -13,6 +13,7 @@ const styles = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #242424;
 
   .sign {
     background: linear-gradient(to right, ${colors.gradColor.first}, ${colors.gradColor.sec});

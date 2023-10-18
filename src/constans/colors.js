@@ -1,8 +1,8 @@
 const colors = {
-  panelColor: "#1d1d1d",
+  panelColor: "#dcdcdc",
   panelShadow: "#000000c5",
   sepLineColor: "#000000",
-  mainFontColor: "#dddddd",
+  mainFontColor: "#606060",
   gradColor: {
     first: "#41c7f0",
     sec: "#ffae00"

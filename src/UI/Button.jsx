@@ -3,23 +3,22 @@
 import { css } from '@emotion/react';
 import PropTypes from "prop-types";
 
-import colors from "../constans/colors";
-
 const styles = css`
 
-button {
-  padding: 9px 0;
-  min-width: 120px;
-  font-size: 1.2rem;
-  border-radius: 30px;
-  background: linear-gradient(to right, ${colors.gradColor.first}, ${colors.gradColor.sec});
-  cursor: pointer;
+  button {
+    padding: 10px 0;
+    min-width: 115px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    background-color: #3f3f3f;
+    cursor: pointer;
+    box-shadow: #0000007f 0 0 20px;
+    color: #ebebeb;
 
-  &:active {
-    transform: scale(0.95);
+    &:active {
+      transform: scale(0.95);
+    }
   }
-}
-
 `
 
 export default function Button({
