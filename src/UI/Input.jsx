@@ -21,6 +21,7 @@ const styles = (value) => css`
     border-radius: 30px;
     background-color: #dddddd;
     box-shadow: ${value ? "inset #00000099 0 0 12px" : "#00000053 0 0 15px"};
+    color: #064c8d;
 
     &::placeholder {
       color: #aaaaaa;

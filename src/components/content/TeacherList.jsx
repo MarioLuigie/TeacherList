@@ -39,7 +39,9 @@ export default function TeacherList() {
   }
 
   const handleEditSelectedTeacher = (teacher) => () => {
-    setEditedTeacher(teacher);
+    setTimeout(() => {
+      setEditedTeacher(teacher);
+    }, 700);
 
     window.scrollTo({
       top: 0,
